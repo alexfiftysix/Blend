@@ -3,5 +3,9 @@
 
     <p>Status: {{ status }}</p>
     <p>Cost per 100g: ${{ cost }}</p>
+    <h3>Amounts</h3>
+    {% for var in variables %}
+        <p>{{ var.name }}={{ var.varValue }}</p>
+    {% endfor %}
 
 {% endblock %}

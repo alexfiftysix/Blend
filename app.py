@@ -32,15 +32,8 @@ def example_visualisation():
     status = LpStatus[prob.status]
     cost = value(prob.objective)
 
-    return render_template('show_results.html', status=status, cost=cost)
+    return render_template('show_results.html', status=status, cost=cost, variables=prob.variables())
 
-
-@app.route('/plot.png')
-def plot_png():
-    fig = create_figure()
-    output = io.BytesIO()
-    FigureCanvas(fig).print_png(output)
-    return Response(output.getvalue(), mimetype='image/png')
 
 
 
@@ -199,10 +192,10 @@ def show_solution():
 
     prob = blend(INGREDIENT_NAMES, COSTS, VARIABLES, REQUIREMENTS)
     status = LpStatus[prob.status]
+    cost = value(prob.objective)
 
     # TODO: Show graph on website
-    return render_template('show_results.html', status=status)
-    return "Doneskies"
+    return render_template('show_results.html', status=status, cost=cost, variables=prob.variables())
 
 
 if __name__ == '__main__':
