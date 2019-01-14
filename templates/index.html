@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1>Blend</h1>
+
+    <form method="post" action="get_counts">
+        <div>
+            <label>Number of ingredients</label>
+            <input type="number" required name="ingredients_count">
+        </div>
+        <div>
+            <label>Number of variables per ingredient</label>
+            <input type="number" required name="variables_count">
+        </div>
+        <input type="submit" value="submit">
+    </form>
+
+{% endblock %}

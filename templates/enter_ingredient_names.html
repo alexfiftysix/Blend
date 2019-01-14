@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blend - enter data</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main>
+
+    <form method="post" action="get_ingredient_names">
+        <p>Ingredients</p>
+        <div class="ingredients">
+            {% for ing in range(ingredients) %}
+                <input type="text" required name="{{ ing }}">
+            {% endfor %}
+        </div>
+
+        <input type="submit">
+    </form>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+    <form method="post" action="get_requirements">
+    <h2>Enter requirements</h2>
+        {% for var in variables %}
+            <div>
+                <h3>{{ var }}: </h3>
+                <label>minimum percentage amount of {{ var }} required</label>
+                <input type="number" step="0.1" name="{{ var }}" required>
+            </div>
+        {% endfor %}
+
+        <input type="submit">
+    </form>
+
+{% endblock %}

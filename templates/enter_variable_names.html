@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <form method="post" action="get_variable_names">
+        <h2>Enter Variable Names</h2>
+        {% for name in range(variables) %}
+            <div>
+                <input type="text" required name="{{ name }}">
+            </div>
+        {% endfor %}
+        <input type="submit">
+    </form>
+
+{% endblock %}

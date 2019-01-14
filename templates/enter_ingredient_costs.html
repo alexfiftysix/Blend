@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h2>Enter Costs</h2>
+    <form method="post" action="get_costs">
+        {% for ing in ingredients %}
+            <div>
+                <label>Cost of one gram of {{ ing }}</label>
+                <input type="number" step="0.001" required name="{{ ing }}">
+            </div>
+        {% endfor %}
+
+        <input type="submit">
+    </form>
+
+{% endblock %}
